@@ -34,7 +34,7 @@ func main() {
 	}
 
 	rate := vegeta.Rate{Freq: 100, Per: time.Second}
-	duration := 4 * time.Second
+	duration := 60 * time.Second
 	targeter := vegeta.NewStaticTargeter(vegeta.Target{
 		Method: "POST",
 		URL:    "http://go-bidder-service:8080/beeswax",
@@ -49,4 +49,7 @@ func main() {
 	metrics.Close()
 
 	fmt.Printf("99th percentile: %s\n", metrics.Latencies.P99)
+	fmt.Printf("95th percentile: %s\n", metrics.Latencies.P95)
+	fmt.Printf("50th percentile: %s\n", metrics.Latencies.P50)
+	fmt.Printf("Mean percentile: %s\n", metrics.Latencies.Mean)
 }
