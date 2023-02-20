@@ -16,5 +16,3 @@ spec:
         - name: loadtesting-go
           image: IMAGE_TAG_PLACEHOLDER
           imagePullPolicy: Always
-          ports:
-            - containerPort: 8080

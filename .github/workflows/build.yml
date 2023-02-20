@@ -3,9 +3,9 @@ run-name: Build triggered by ${{ github.actor }}
 
 on:
   push:
-    branches: [ "master","cpm-change" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
   workflow_call:
     inputs:
