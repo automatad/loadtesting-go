@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loadtesting-go
+spec:
+  selector:
+    matchLabels:
+      app: loadtesting-go
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: loadtesting-go
+    spec:
+      containers:
+        - name: loadtesting-go
+          image: IMAGE_TAG_PLACEHOLDER
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

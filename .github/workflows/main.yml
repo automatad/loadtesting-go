@@ -1,0 +1,22 @@
+name: Main
+run-name: Deployment to ${{ inputs.deployTarget }} triggered by ${{ github.actor }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployTarget:
+        description: Deployment Target
+        required: true
+        default: staging
+        type: choice
+        options:
+          - staging
+          - prod
+
+jobs:
+  call_workflow:
+    name: Call Workflow
+    uses: ./.github/workflows/build.yml
+    with:
+      deployTarget: ${{ inputs.deployTarget }}
+    secrets: inherit
