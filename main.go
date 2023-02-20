@@ -37,7 +37,7 @@ func main() {
 	duration := 4 * time.Second
 	targeter := vegeta.NewStaticTargeter(vegeta.Target{
 		Method: "POST",
-		URL:    "https://bw1.dev.90d.io/beeswax",
+		URL:    "http://go-bidder-service:8080/beeswax",
 		Body:   data,
 	})
 	attacker := vegeta.NewAttacker()
