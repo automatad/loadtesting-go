@@ -33,7 +33,7 @@ func main() {
 		log.Fatal("marshaling error: ", err)
 	}
 
-	rate := vegeta.Rate{Freq: 120, Per: time.Second}
+	rate := vegeta.Rate{Freq: 150, Per: time.Second}
 	duration := 60 * time.Second
 	targeter := vegeta.NewStaticTargeter(vegeta.Target{
 		Method: "POST",
